@@ -18,7 +18,7 @@ const Projects = () => {
       description: 'Développement d\'une application web pour la gestion d\'annonces immobilières et d\'épargne collective, avec messagerie et notifications en temps réel, gestion des abonnements et espace admin.',
       technologies: ['ReactJS', 'Node.js', 'Express', 'Mongoose', 'MongoDB', 'Tailwind CSS', 'MinIO', 'WebSocket'],
       githubUrl: 'https://github.com/Safaa-Ettalhi/TireDarna.git',
-      logo: 'https://www.floridamuseum.ufl.edu/wp-content/uploads/sites/115/2020/07/icon-habitat-500x500.png',
+      logo: 'https://th.bing.com/th/id/R.f9b5e5d823af453dbbbb9a9f6cfcf2b8?rik=TmKxt2gzPMz4Ig&riu=http%3a%2f%2fwww.santbio.com%2fuploads%2fimages%2f2c33f33561988cc3cb9010a00910634f.png&ehk=4KU1iDilM6WY1aQPIHfiDA6EXPu%2boaNZEl%2f4zO5bxR0%3d&risl=&pid=ImgRaw&r=0',
     },
     {
       title: 'MediCare',
