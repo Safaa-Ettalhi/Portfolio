@@ -74,6 +74,7 @@ const Projects = () => {
                           src={project.logo} 
                           alt={project.title}
                           className="w-28 h-28 object-contain filter drop-shadow-2xl group-hover:brightness-120 group-hover:scale-110 transition-all duration-300 relative z-10"
+                          style={{ backgroundColor: 'transparent' }}
                           onError={(e) => {
                             e.target.style.display = 'none'
                           }}
