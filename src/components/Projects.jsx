@@ -10,7 +10,7 @@ const Projects = () => {
       description: 'Application web de gestion de flotte (camions, remorques, pneus, trajets, entretiens) avec tableaux de bord, génération de rapports PDF et suivi opérationnel.',
       technologies: ['Node.js', 'Express', 'MongoDB', 'Mongoose', 'Jest', 'Supertest', 'ReactJS', 'Vite', 'Tailwind CSS', 'Docker'],
       githubUrl: 'https://github.com/Safaa-Ettalhi/Trackify.git',
-      logo: 'https://cdn-icons-png.flaticon.com/512/2965/2965879.png',
+      logo: 'https://www.pngmart.com/files/23/Truck-Logo-PNG.png',
     },
     {
       title: 'TireDarna',
