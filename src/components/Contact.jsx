@@ -34,9 +34,11 @@ const Contact = () => {
         })
         setFormData({ name: '', email: '', message: '' })
       } else {
+        const errorMessage = data.error || 'Erreur lors de l\'envoi du message. Veuillez réessayer.'
+        const errorDetails = data.details ? ` (${data.details})` : ''
         setSubmitStatus({ 
           type: 'error', 
-          message: data.error || 'Erreur lors de l\'envoi du message. Veuillez réessayer.' 
+          message: errorMessage + errorDetails
         })
       }
     } catch (error) {
