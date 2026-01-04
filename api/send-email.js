@@ -1,9 +1,6 @@
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export default async function handler(req, res) {
-
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -17,6 +14,15 @@ export default async function handler(req, res) {
   }
 
   try {
+    if (!process.env.RESEND_API_KEY) {
+      console.error('RESEND_API_KEY is not set');
+      return res.status(500).json({ 
+        error: 'Configuration serveur manquante',
+        details: 'La clé API Resend n\'est pas configurée'
+      });
+    }
+
+    const resend = new Resend(process.env.RESEND_API_KEY);
     const { name, email, message } = req.body;
 
     if (!name || !email || !message) {
@@ -43,9 +49,11 @@ export default async function handler(req, res) {
     const safeEmail = escapeHtml(email);
     const safeMessage = escapeHtml(message).replace(/\n/g, '<br>');
 
+    const contactEmail = process.env.CONTACT_EMAIL || 'safaeettalhi1@gmail.com';
+
     const { data, error } = await resend.emails.send({
       from: 'Portfolio Contact <onboarding@resend.dev>',
-      to: [process.env.CONTACT_EMAIL || 'safaeettalhi1@gmail.com'],
+      to: [contactEmail],
       replyTo: email,
       subject: `Nouveau message de contact - ${safeName}`,
       html: `
@@ -73,8 +81,11 @@ export default async function handler(req, res) {
     });
 
     if (error) {
-      console.error('Error sending email:', error);
-      return res.status(500).json({ error: 'Erreur lors de l\'envoi de l\'email' });
+      console.error('Resend API Error:', JSON.stringify(error, null, 2));
+      return res.status(500).json({ 
+        error: 'Erreur lors de l\'envoi de l\'email',
+        details: error.message || 'Erreur inconnue'
+      });
     }
 
     return res.status(200).json({ 
@@ -84,8 +95,11 @@ export default async function handler(req, res) {
     });
 
   } catch (error) {
-    console.error('Error in send-email API:', error);
-    return res.status(500).json({ error: 'Erreur serveur' });
+    console.error('Unexpected error in send-email API:', error);
+    return res.status(500).json({ 
+      error: 'Erreur serveur',
+      details: error.message || 'Erreur inconnue'
+    });
   }
 }
 
