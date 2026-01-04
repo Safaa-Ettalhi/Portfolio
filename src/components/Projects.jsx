@@ -10,7 +10,7 @@ const Projects = () => {
       description: 'Application web de gestion de flotte (camions, remorques, pneus, trajets, entretiens) avec tableaux de bord, génération de rapports PDF et suivi opérationnel.',
       technologies: ['Node.js', 'Express', 'MongoDB', 'Mongoose', 'Jest', 'Supertest', 'ReactJS', 'Vite', 'Tailwind CSS', 'Docker'],
       githubUrl: 'https://github.com/Safaa-Ettalhi/Trackify.git',
-      logo: 'https://cdn-icons-png.flaticon.com/512/2907/2907767.png',
+      logo: 'https://cdn-icons-png.flaticon.com/512/3448/3448339.png',
     },
     {
       title: 'TireDarna',
@@ -18,7 +18,7 @@ const Projects = () => {
       description: 'Développement d\'une application web pour la gestion d\'annonces immobilières et d\'épargne collective, avec messagerie et notifications en temps réel, gestion des abonnements et espace admin.',
       technologies: ['ReactJS', 'Node.js', 'Express', 'Mongoose', 'MongoDB', 'Tailwind CSS', 'MinIO', 'WebSocket'],
       githubUrl: 'https://github.com/Safaa-Ettalhi/TireDarna.git',
-      logo: 'https://cdn-icons-png.flaticon.com/512/1995/1995515.png',
+      logo: 'https://cdn-icons-png.flaticon.com/512/1076/1076336.png',
     },
     {
       title: 'MediCare',
@@ -26,7 +26,7 @@ const Projects = () => {
       description: 'Application web monopage (SPA) pour la gestion complète d\'un cabinet médical. Remplace la gestion Excel par une interface moderne, sécurisée et ergonomique avec gestion des patients, rendez-vous, finances et tableau de bord.',
       technologies: ['HTML5', 'CSS3', 'JavaScript', 'LocalStorage', 'Web Crypto API', 'SPA', 'Figma', 'Jira'],
       githubUrl: 'https://github.com/Safaa-Ettalhi/ClinicBoard.git',
-      logo: 'https://cdn-icons-png.flaticon.com/512/2965/2965879.png',
+      logo: 'https://cdn-icons-png.flaticon.com/512/201/201623.png',
     },
   ]
 
