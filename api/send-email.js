@@ -50,10 +50,12 @@ export default async function handler(req, res) {
     const safeMessage = escapeHtml(message).replace(/\n/g, '<br>');
 
     const contactEmail = process.env.CONTACT_EMAIL || 'safaeettalhi1@gmail.com';
+    
+    const recipientEmail = contactEmail;
 
     const { data, error } = await resend.emails.send({
       from: 'Portfolio Contact <onboarding@resend.dev>',
-      to: [contactEmail],
+      to: [recipientEmail],
       replyTo: email,
       subject: `Nouveau message de contact - ${safeName}`,
       html: `

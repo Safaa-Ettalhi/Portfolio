@@ -42,6 +42,12 @@ Après avoir ajouté/modifié les variables d'environnement :
 
 ### 6. Erreurs courantes
 
+#### "You can only send testing emails to your own email address"
+- **Solution** : En mode test, Resend n'autorise l'envoi qu'à l'email de votre compte Resend
+- **Option 1** : Utilisez votre email Resend comme `CONTACT_EMAIL` (celui avec lequel vous vous êtes inscrit)
+- **Option 2** : Vérifiez un domaine sur https://resend.com/domains et changez le `from` pour utiliser votre domaine
+- **Option 3** : Passez à un plan payant Resend pour envoyer à n'importe quelle adresse
+
 #### "RESEND_API_KEY is not set"
 - **Solution** : Ajoutez la variable `RESEND_API_KEY` dans Vercel et redéployez
 

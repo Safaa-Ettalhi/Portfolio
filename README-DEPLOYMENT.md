@@ -50,9 +50,13 @@ vercel env add CONTACT_EMAIL
 2. Cliquez sur **Settings** → **Environment Variables**
 3. Ajoutez :
    - **RESEND_API_KEY** : `re_votre_cle_api`
-   - **CONTACT_EMAIL** : `safaeettalhi1@gmail.com`
+   - **CONTACT_EMAIL** : **IMPORTANT** - Utilisez l'email avec lequel vous vous êtes inscrit sur Resend (en mode test, Resend n'autorise l'envoi qu'à cet email)
 4. Sélectionnez **Production**, **Preview**, et **Development**
 5. Cliquez sur **Save**
+
+**Note importante** : En mode test gratuit, Resend n'autorise l'envoi qu'à l'email de votre compte. Pour envoyer à d'autres adresses, vous devez :
+- Vérifier un domaine sur https://resend.com/domains
+- Ou passer à un plan payant
 
 ### 4. Vérification du domaine d'envoi (Optionnel mais recommandé)
 
