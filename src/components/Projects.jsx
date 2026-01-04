@@ -26,7 +26,7 @@ const Projects = () => {
       description: 'Application web monopage (SPA) pour la gestion complète d\'un cabinet médical. Remplace la gestion Excel par une interface moderne, sécurisée et ergonomique avec gestion des patients, rendez-vous, finances et tableau de bord.',
       technologies: ['HTML5', 'CSS3', 'JavaScript', 'LocalStorage', 'Web Crypto API', 'SPA', 'Figma', 'Jira'],
       githubUrl: 'https://github.com/Safaa-Ettalhi/ClinicBoard.git',
-      logo: 'https://cdn-icons-png.flaticon.com/512/2965/2965879.png',
+      logo: 'https://cdn-icons-png.flaticon.com/512/201/201623.png',
     },
   ]
 
