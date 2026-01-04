@@ -11,7 +11,10 @@
 
 1. Créez un compte sur [Resend](https://resend.com)
 2. Allez dans **API Keys** et créez une nouvelle clé API
-3. Copiez la clé API (elle commence par `re_`)
+3. **IMPORTANT** : Copiez la clé API complète (elle commence par `re_` et fait environ 50 caractères)
+   - Assurez-vous de copier toute la clé sans espaces
+   - La clé doit ressembler à : `re_1234567890abcdefghijklmnopqrstuvwxyz`
+4. **Note** : Vous ne pourrez voir la clé qu'une seule fois lors de sa création. Si vous l'avez perdue, créez-en une nouvelle.
 
 ### 2. Déploiement sur Vercel
 

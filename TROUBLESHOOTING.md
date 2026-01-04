@@ -51,8 +51,12 @@ Après avoir ajouté/modifié les variables d'environnement :
 #### "RESEND_API_KEY is not set"
 - **Solution** : Ajoutez la variable `RESEND_API_KEY` dans Vercel et redéployez
 
-#### "Invalid API key"
-- **Solution** : Vérifiez que votre clé API Resend est correcte et active
+#### "API key is invalid" ou "Invalid API key"
+- **Solution 1** : Vérifiez que votre clé API commence bien par `re_`
+- **Solution 2** : Allez sur https://resend.com/api-keys et vérifiez que votre clé est active
+- **Solution 3** : Créez une nouvelle clé API sur Resend et mettez à jour `RESEND_API_KEY` sur Vercel
+- **Solution 4** : Vérifiez que vous avez copié la clé complète (sans espaces avant/après)
+- **Solution 5** : Assurez-vous que la variable `RESEND_API_KEY` est bien définie pour Production, Preview et Development sur Vercel
 
 #### "Domain not verified"
 - **Solution** : Par défaut, Resend utilise `onboarding@resend.dev`. Pour la production, vérifiez votre domaine sur Resend

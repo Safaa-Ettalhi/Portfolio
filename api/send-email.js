@@ -14,7 +14,9 @@ export default async function handler(req, res) {
   }
 
   try {
-    if (!process.env.RESEND_API_KEY) {
+    const apiKey = process.env.RESEND_API_KEY;
+    
+    if (!apiKey) {
       console.error('RESEND_API_KEY is not set');
       return res.status(500).json({ 
         error: 'Configuration serveur manquante',
@@ -22,7 +24,15 @@ export default async function handler(req, res) {
       });
     }
 
-    const resend = new Resend(process.env.RESEND_API_KEY);
+    if (!apiKey.startsWith('re_')) {
+      console.error('RESEND_API_KEY format is invalid');
+      return res.status(500).json({ 
+        error: 'Clé API invalide',
+        details: 'La clé API Resend doit commencer par "re_"'
+      });
+    }
+
+    const resend = new Resend(apiKey);
     const { name, email, message } = req.body;
 
     if (!name || !email || !message) {
