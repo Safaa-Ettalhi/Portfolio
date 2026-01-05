@@ -1,7 +1,8 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaDownload } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaDownload, FaSparkles, FaBolt, FaArrowRight } from 'react-icons/fa'
 import { HiArrowDown } from 'react-icons/hi'
+import { BsStars } from 'react-icons/bs'
 import profileImage from '../pic/safaa.jpg'
 import cvFile from '../cv/safaaEttalhi_Cv.pdf'
 
@@ -15,9 +16,10 @@ const Hero = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Enhanced background gradients */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary-900/40 via-purple-900/30 to-pink-900/40"></div>
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/40"></div>
+      {/* Enhanced background gradients with feminine touch */}
+      <div className="absolute inset-0 bg-gradient-to-br from-pink-900/35 via-purple-900/30 to-rose-900/35"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-pink-500/5 to-transparent"></div>
       
       {/* Animated grid pattern */}
       <div 
@@ -27,40 +29,52 @@ const Hero = () => {
         }}
       ></div>
       
-      {/* Enhanced animated orbs */}
+      {/* Enhanced animated orbs with feminine colors */}
       <motion.div
-        className="absolute top-20 left-20 w-72 h-72 bg-primary-500/30 rounded-full blur-3xl"
+        className="absolute top-20 left-20 w-80 h-80 bg-pink-500/25 rounded-full blur-3xl"
         animate={{
-          x: [0, 100, 0],
-          y: [0, 50, 0],
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.5, 0.3],
-        }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-      <motion.div
-        className="absolute bottom-20 right-20 w-96 h-96 bg-purple-500/30 rounded-full blur-3xl"
-        animate={{
-          x: [0, -100, 0],
-          y: [0, -50, 0],
+          x: [0, 80, 0],
+          y: [0, 60, 0],
           scale: [1, 1.3, 1],
-          opacity: [0.3, 0.5, 0.3],
+          opacity: [0.25, 0.45, 0.25],
         }}
         transition={{
-          duration: 25,
+          duration: 22,
           repeat: Infinity,
           ease: "easeInOut",
         }}
       />
       <motion.div
-        className="absolute top-1/2 left-1/2 w-64 h-64 bg-pink-500/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"
+        className="absolute bottom-20 right-20 w-96 h-96 bg-purple-500/25 rounded-full blur-3xl"
         animate={{
+          x: [0, -80, 0],
+          y: [0, -60, 0],
           scale: [1, 1.4, 1],
+          opacity: [0.25, 0.45, 0.25],
+        }}
+        transition={{
+          duration: 28,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
+      <motion.div
+        className="absolute top-1/2 left-1/2 w-72 h-72 bg-rose-500/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"
+        animate={{
+          scale: [1, 1.5, 1],
           rotate: [0, 180, 360],
+        }}
+        transition={{
+          duration: 35,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
+      <motion.div
+        className="absolute top-1/3 right-1/4 w-64 h-64 bg-fuchsia-500/15 rounded-full blur-3xl"
+        animate={{
+          scale: [1, 1.2, 1],
+          rotate: [360, 180, 0],
         }}
         transition={{
           duration: 30,
@@ -78,12 +92,19 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
           >
             <motion.p
-              className="text-primary-400 text-lg md:text-xl mb-4 font-medium tracking-wide"
+              className="text-primary-400 text-lg md:text-xl mb-4 font-medium tracking-wide flex items-center gap-2"
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2, type: "spring", stiffness: 100 }}
             >
-              <span className="inline-block animate-pulse">✨</span> Bonjour, je suis
+              <motion.span
+                animate={{ rotate: [0, 10, -10, 0], scale: [1, 1.1, 1] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                className="text-primary-300"
+              >
+                <BsStars className="text-xl" />
+              </motion.span>
+              Bonjour, je suis
             </motion.p>
             <motion.h1
               className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4 leading-tight"
@@ -163,7 +184,7 @@ const Hero = () => {
                     animate={{ x: [0, 5, 0] }}
                     transition={{ duration: 1.5, repeat: Infinity }}
                   >
-                    →
+                    <FaArrowRight className="text-sm" />
                   </motion.span>
                 </span>
               </motion.a>
@@ -255,11 +276,11 @@ const Hero = () => {
                   <div className="absolute inset-0 bg-gradient-to-r from-primary-500/20 to-purple-600/20 rounded-full opacity-0 group-hover/profile:opacity-100 transition-opacity duration-300"></div>
                   <span className="text-sm font-bold text-primary-300 relative z-10 flex items-center gap-2">
                     <motion.span
-                      animate={{ rotate: [0, 360] }}
-                      transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                      className="text-lg"
+                      animate={{ rotate: [0, 360], scale: [1, 1.2, 1] }}
+                      transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                      className="text-primary-400"
                     >
-                      ⚡
+                      <FaBolt className="text-base" />
                     </motion.span>
                     Full-Stack Developer
                   </span>

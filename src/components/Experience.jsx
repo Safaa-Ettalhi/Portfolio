@@ -104,13 +104,13 @@ const Experience = () => {
               <div className="relative z-10">
                 <div className="flex items-start gap-6 mb-6">
                   <motion.div 
-                    className="p-5 bg-gradient-to-br from-primary-500/30 to-purple-600/30 rounded-2xl relative overflow-hidden group/icon"
+                    className="p-5 bg-gradient-to-br from-pink-500/30 via-purple-600/30 to-rose-500/30 rounded-2xl relative overflow-hidden group/icon"
                     whileHover={{ scale: 1.1, rotate: [0, -5, 5, 0] }}
                     transition={{ duration: 0.5 }}
                   >
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary-500/50 to-purple-600/50 opacity-0 group-hover/icon:opacity-100 transition-opacity duration-300"></div>
-                    <FaBriefcase className="text-4xl text-primary-400 relative z-10 drop-shadow-lg" />
-                    <div className="absolute inset-0 bg-primary-500/20 blur-xl opacity-0 group-hover/icon:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-pink-500/50 via-purple-600/50 to-rose-500/50 opacity-0 group-hover/icon:opacity-100 transition-opacity duration-300"></div>
+                    <FaBriefcase className="text-4xl text-pink-400 relative z-10 drop-shadow-lg" />
+                    <div className="absolute inset-0 bg-pink-500/20 blur-xl opacity-0 group-hover/icon:opacity-100 transition-opacity duration-300"></div>
                   </motion.div>
                   
                   <div className="flex-1">
@@ -122,7 +122,7 @@ const Experience = () => {
                         {exp.company}
                       </motion.h3>
                       <motion.span 
-                        className="px-4 py-2 bg-gradient-to-r from-primary-500/30 to-purple-600/30 text-primary-300 rounded-full text-sm font-semibold border border-primary-500/50 shadow-lg shadow-primary-500/20"
+                        className="px-4 py-2 bg-gradient-to-r from-pink-500/30 via-purple-600/30 to-rose-500/30 text-pink-300 rounded-full text-sm font-semibold border border-pink-500/50 shadow-lg shadow-pink-500/20"
                         whileHover={{ scale: 1.1 }}
                         initial={{ opacity: 0, scale: 0.8 }}
                         whileInView={{ opacity: 1, scale: 1 }}
@@ -134,7 +134,7 @@ const Experience = () => {
                     </div>
                     
                     <motion.p 
-                      className="text-xl text-primary-400 mb-4 font-semibold"
+                      className="text-xl text-pink-400 mb-4 font-semibold"
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
@@ -150,7 +150,7 @@ const Experience = () => {
                       viewport={{ once: true }}
                       transition={{ delay: index * 0.2 + 0.2 }}
                     >
-                      <FaCalendarAlt className="text-primary-400" />
+                      <FaCalendarAlt className="text-pink-400" />
                       <span className="text-gray-300 font-medium">{exp.period}</span>
                     </motion.div>
                     
@@ -168,14 +168,14 @@ const Experience = () => {
                       {exp.technologies.map((tech, techIndex) => (
                         <motion.span
                           key={techIndex}
-                          className="px-4 py-2 glass rounded-full text-sm text-gray-300 hover:text-white transition-all duration-300 border border-primary-500/30 hover:border-primary-500/60 relative overflow-hidden group/tech"
+                          className="px-4 py-2 glass rounded-full text-sm text-gray-300 hover:text-white transition-all duration-300 border border-pink-500/30 hover:border-pink-500/60 relative overflow-hidden group/tech"
                           initial={{ opacity: 0, scale: 0.8 }}
                           whileInView={{ opacity: 1, scale: 1 }}
                           viewport={{ once: true }}
                           transition={{ delay: (index * 0.2) + (techIndex * 0.05) + 0.4 }}
                           whileHover={{ scale: 1.1, y: -3 }}
                         >
-                          <div className="absolute inset-0 bg-gradient-to-r from-primary-500/20 to-purple-600/20 opacity-0 group-hover/tech:opacity-100 transition-opacity duration-300"></div>
+                          <div className="absolute inset-0 bg-gradient-to-r from-pink-500/20 via-purple-600/20 to-rose-500/20 opacity-0 group-hover/tech:opacity-100 transition-opacity duration-300"></div>
                           <span className="relative z-10 font-medium flex items-center gap-2">
                             <FaCode className="text-xs opacity-50" />
                             {tech}
