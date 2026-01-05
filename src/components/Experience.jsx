@@ -27,7 +27,7 @@ const Experience = () => {
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
-          className="absolute top-20 left-10 w-72 h-72 bg-primary-500/10 rounded-full blur-3xl"
+          className="absolute top-20 left-10 w-72 h-72 bg-pink-500/10 rounded-full blur-3xl"
           animate={{
             x: [0, 100, 0],
             y: [0, 50, 0],
@@ -48,6 +48,18 @@ const Experience = () => {
           }}
           transition={{
             duration: 25,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+        <motion.div
+          className="absolute top-1/2 left-1/2 w-64 h-64 bg-rose-500/8 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"
+          animate={{
+            scale: [1, 1.3, 1],
+            rotate: [0, 180, 360],
+          }}
+          transition={{
+            duration: 30,
             repeat: Infinity,
             ease: "easeInOut",
           }}
@@ -94,11 +106,11 @@ const Experience = () => {
               whileHover={{ scale: 1.03, y: -10, rotateY: 2 }}
             >
               {/* Gradient overlay on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary-500/5 via-transparent to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-pink-500/5 via-transparent to-rose-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               
               {/* Animated border */}
               <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-primary-500/20 via-purple-600/20 to-pink-500/20 blur-xl"></div>
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-pink-500/20 via-purple-600/20 to-rose-500/20 blur-xl"></div>
               </div>
 
               <div className="relative z-10">
@@ -116,7 +128,7 @@ const Experience = () => {
                   <div className="flex-1">
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3 gap-3">
                       <motion.h3 
-                        className="text-3xl font-bold bg-gradient-to-r from-white via-primary-200 to-white bg-clip-text text-transparent group-hover:from-primary-400 group-hover:via-white group-hover:to-primary-400 transition-all duration-500"
+                        className="text-3xl font-bold bg-gradient-to-r from-white via-pink-200 to-white bg-clip-text text-transparent group-hover:from-pink-400 group-hover:via-white group-hover:to-rose-400 transition-all duration-500"
                         whileHover={{ x: 5 }}
                       >
                         {exp.company}
