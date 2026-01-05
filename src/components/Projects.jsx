@@ -35,7 +35,7 @@ const Projects = () => {
       {/* Enhanced background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
-          className="absolute top-0 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"
+          className="absolute top-0 left-1/4 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl"
           animate={{
             x: [0, 50, 0],
             y: [0, 100, 0],
@@ -48,7 +48,7 @@ const Projects = () => {
           }}
         />
         <motion.div
-          className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"
+          className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"
           animate={{
             x: [0, -50, 0],
             y: [0, -100, 0],
@@ -56,18 +56,6 @@ const Projects = () => {
           }}
           transition={{
             duration: 25,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-        <motion.div
-          className="absolute top-1/2 right-1/3 w-80 h-80 bg-indigo-500/8 rounded-full blur-3xl"
-          animate={{
-            scale: [1, 1.4, 1],
-            rotate: [0, 180, 360],
-          }}
-          transition={{
-            duration: 30,
             repeat: Infinity,
             ease: "easeInOut",
           }}
@@ -98,7 +86,7 @@ const Projects = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
           >
-            <span className="text-cyan-400 font-semibold">+25 projets</span> réalisés avec passion et excellence
+            <span className="text-primary-400 font-semibold">+25 projets</span> réalisés avec passion et excellence
           </motion.p>
         </motion.div>
 
@@ -106,7 +94,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              className="glass-strong rounded-3xl overflow-hidden hover:bg-cyan-500/10 transition-all duration-500 group relative card-hover project-card transform-3d"
+              className="glass-strong rounded-3xl overflow-hidden hover:bg-primary-500/10 transition-all duration-500 group relative card-hover project-card transform-3d"
               initial={{ opacity: 0, y: 60, rotateX: -15, scale: 0.9 }}
               whileInView={{ opacity: 1, y: 0, rotateX: 0, scale: 1 }}
               viewport={{ once: true }}
@@ -115,13 +103,13 @@ const Projects = () => {
               style={{ transformStyle: "preserve-3d" }}
             >
               {/* Enhanced gradient overlays */}
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-transparent to-indigo-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-500/10 via-transparent to-purple-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               
               {/* Animated border glow */}
               <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-cyan-500/30 via-blue-500/30 to-indigo-500/30 blur-2xl"></div>
-                <div className="absolute inset-[1px] rounded-3xl bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-indigo-500/20"></div>
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-primary-500/30 via-purple-600/30 to-pink-500/30 blur-2xl"></div>
+                <div className="absolute inset-[1px] rounded-3xl bg-gradient-to-r from-primary-500/20 via-purple-600/20 to-pink-500/20"></div>
               </div>
               
               <div className="p-8 relative z-10">
@@ -133,11 +121,11 @@ const Projects = () => {
                   {project.logo && (
                     <div className="relative">
                       {/* Multiple glow layers */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/40 to-blue-500/40 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                      <div className="absolute inset-0 bg-gradient-to-r from-blue-500/30 to-indigo-500/30 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-75"></div>
+                      <div className="absolute inset-0 bg-gradient-to-r from-primary-500/40 to-purple-600/40 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      <div className="absolute inset-0 bg-gradient-to-r from-purple-500/30 to-pink-500/30 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-75"></div>
                       
-                      <div className="relative glass-strong p-6 rounded-2xl group-hover:bg-cyan-500/25 transition-all duration-500 border-2 border-cyan-500/30 group-hover:border-cyan-500/70 shadow-xl shadow-cyan-500/20">
-                        <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 via-blue-500/20 to-indigo-500/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      <div className="relative glass-strong p-6 rounded-2xl group-hover:bg-primary-500/25 transition-all duration-500 border-2 border-primary-500/30 group-hover:border-primary-500/70 shadow-xl shadow-primary-500/20">
+                        <div className="absolute inset-0 bg-gradient-to-br from-primary-500/20 to-purple-600/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         <motion.img 
                           src={project.logo} 
                           alt={project.title}
@@ -155,14 +143,14 @@ const Projects = () => {
                 </motion.div>
                 
                 <motion.h3 
-                  className="text-3xl font-bold mb-3 group-hover:text-cyan-400 transition-all duration-300"
+                  className="text-3xl font-bold mb-3 group-hover:text-primary-400 transition-all duration-300"
                   whileHover={{ x: 5 }}
                 >
                   {project.title}
                 </motion.h3>
                 
                 <motion.p 
-                  className="text-cyan-400 font-semibold mb-4 text-lg"
+                  className="text-primary-400 font-semibold mb-4 text-lg"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
@@ -185,14 +173,14 @@ const Projects = () => {
                   {project.technologies.map((tech, techIndex) => (
                     <motion.span
                       key={techIndex}
-                      className="px-4 py-2 bg-cyan-500/20 rounded-full text-xs text-gray-300 font-medium border border-cyan-500/40 hover:border-cyan-500/70 transition-all duration-300 relative overflow-hidden group/tech"
-                      whileHover={{ scale: 1.15, y: -3, backgroundColor: 'rgba(6, 182, 212, 0.35)' }}
+                      className="px-4 py-2 bg-primary-500/20 rounded-full text-xs text-gray-300 font-medium border border-primary-500/40 hover:border-primary-500/70 transition-all duration-300 relative overflow-hidden group/tech"
+                      whileHover={{ scale: 1.15, y: -3, backgroundColor: 'rgba(14, 165, 233, 0.35)' }}
                       initial={{ opacity: 0, scale: 0.8 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}
                       transition={{ delay: (index * 0.2) + (techIndex * 0.05) + 0.3, type: "spring" }}
                     >
-                      <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/30 via-blue-500/30 to-indigo-500/30 opacity-0 group-hover/tech:opacity-100 transition-opacity duration-300"></div>
+                      <div className="absolute inset-0 bg-gradient-to-r from-primary-500/30 to-purple-600/30 opacity-0 group-hover/tech:opacity-100 transition-opacity duration-300"></div>
                       <span className="relative z-10">{tech}</span>
                     </motion.span>
                   ))}
@@ -203,11 +191,11 @@ const Projects = () => {
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-6 py-3 glass rounded-xl hover:bg-cyan-500/40 transition-all duration-300 font-semibold group/btn relative overflow-hidden"
+                    className="flex items-center gap-2 px-6 py-3 glass rounded-xl hover:bg-primary-500/40 transition-all duration-300 font-semibold group/btn relative overflow-hidden"
                     whileHover={{ scale: 1.1, x: 5, y: -3 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/30 via-blue-500/30 to-indigo-500/30 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary-500/30 to-purple-600/30 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
                     <FaGithub className="group-hover/btn:rotate-12 transition-transform relative z-10 text-lg" />
                     <span className="relative z-10">Voir le code</span>
                   </motion.a>
