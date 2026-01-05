@@ -98,7 +98,7 @@ const Projects = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
           >
-            <span className="text-primary-400 font-semibold">+25 projets</span> réalisés avec passion et excellence
+            <span className="text-pink-400 font-semibold">+25 projets</span> réalisés avec passion et excellence
           </motion.p>
         </motion.div>
 
@@ -106,7 +106,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              className="glass-strong rounded-3xl overflow-hidden hover:bg-primary-500/10 transition-all duration-500 group relative card-hover project-card transform-3d"
+              className="glass-strong rounded-3xl overflow-hidden hover:bg-pink-500/10 transition-all duration-500 group relative card-hover project-card transform-3d"
               initial={{ opacity: 0, y: 60, rotateX: -15, scale: 0.9 }}
               whileInView={{ opacity: 1, y: 0, rotateX: 0, scale: 1 }}
               viewport={{ once: true }}
