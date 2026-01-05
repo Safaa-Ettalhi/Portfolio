@@ -100,23 +100,7 @@ body::before {
   animation: gradientShift 6s ease infinite;
   font-weight: 800;
   letter-spacing: -0.02em;
-  filter: drop-shadow(0 0 40px rgba(14, 165, 233, 0.5));
-  position: relative;
-}
-
-.gradient-text::after {
-  content: attr(data-text);
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: -1;
-  background: linear-gradient(135deg, #0ea5e9 0%, #667eea 20%, #764ba2 40%, #f093fb 60%, #ec4899 80%, #0ea5e9 100%);
-  background-size: 300% 300%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: blur(10px);
-  opacity: 0.5;
-  animation: gradientShift 6s ease infinite;
+  filter: drop-shadow(0 0 30px rgba(14, 165, 233, 0.3));
 }
 
 @keyframes gradientShift {
@@ -129,95 +113,51 @@ body::before {
 }
 
 .glass {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(28px) saturate(180%);
-  -webkit-backdrop-filter: blur(28px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 
     0 8px 32px 0 rgba(0, 0, 0, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1),
-    0 0 0 1px rgba(14, 165, 233, 0.1),
-    inset 0 -1px 0 rgba(14, 165, 233, 0.05);
-  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  border-radius: 24px;
-  position: relative;
-  overflow: hidden;
-}
-
-.glass::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(14, 165, 233, 0.1), transparent);
-  transition: left 0.8s;
-}
-
-.glass:hover::before {
-  left: 100%;
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    0 0 0 1px rgba(14, 165, 233, 0.05);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .glass:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(14, 165, 233, 0.4);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.25);
   box-shadow: 
-    0 24px 80px 0 rgba(0, 0, 0, 0.6),
+    0 16px 48px 0 rgba(0, 0, 0, 0.6),
     inset 0 1px 0 rgba(255, 255, 255, 0.2),
-    0 0 0 1px rgba(14, 165, 233, 0.3),
-    0 0 60px rgba(14, 165, 233, 0.3),
-    0 0 100px rgba(139, 92, 246, 0.2),
-    inset 0 -1px 0 rgba(14, 165, 233, 0.2);
-  transform: translateY(-6px) scale(1.02);
+    0 0 0 1px rgba(14, 165, 233, 0.2),
+    0 0 40px rgba(14, 165, 233, 0.15);
+  transform: translateY(-2px);
 }
 
 .glass-strong {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(36px) saturate(180%);
-  -webkit-backdrop-filter: blur(36px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 
     0 8px 32px 0 rgba(0, 0, 0, 0.5),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    0 0 0 1px rgba(14, 165, 233, 0.15),
-    0 0 120px rgba(14, 165, 233, 0.2),
-    0 0 180px rgba(139, 92, 246, 0.15),
-    inset 0 -1px 0 rgba(14, 165, 233, 0.1);
-  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-  border-radius: 28px;
-  position: relative;
-  overflow: hidden;
-}
-
-.glass-strong::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(14, 165, 233, 0.1) 0%, transparent 70%);
-  opacity: 0;
-  transition: opacity 0.7s;
-}
-
-.glass-strong:hover::before {
-  opacity: 1;
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    0 0 0 1px rgba(14, 165, 233, 0.1),
+    0 0 80px rgba(14, 165, 233, 0.15);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .glass-strong:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(14, 165, 233, 0.5);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
   box-shadow: 
-    0 32px 100px 0 rgba(0, 0, 0, 0.7),
+    0 20px 60px 0 rgba(0, 0, 0, 0.7),
     inset 0 1px 0 rgba(255, 255, 255, 0.25),
-    0 0 0 1px rgba(14, 165, 233, 0.4),
-    0 0 150px rgba(14, 165, 233, 0.4),
-    0 0 220px rgba(139, 92, 246, 0.3),
-    0 0 280px rgba(59, 130, 246, 0.2),
-    inset 0 -1px 0 rgba(14, 165, 233, 0.3);
-  transform: translateY(-8px) scale(1.04);
+    0 0 0 1px rgba(14, 165, 233, 0.3),
+    0 0 100px rgba(14, 165, 233, 0.3),
+    0 0 150px rgba(139, 92, 246, 0.2);
+  transform: translateY(-4px);
 }
 
 .glow {
