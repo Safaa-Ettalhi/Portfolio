@@ -149,14 +149,14 @@ const Hero = () => {
             </motion.div>
 
             <motion.div
-              className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center md:justify-start w-full sm:w-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.9, type: "spring" }}
             >
               <motion.a
                 href="#projects"
-                className="px-8 py-4 btn-primary rounded-full font-semibold text-white hover:shadow-2xl hover:shadow-primary-500/50 transition-all duration-300 relative overflow-hidden group/btn"
+                className="px-6 py-3 sm:px-8 sm:py-4 btn-primary rounded-full font-semibold text-white hover:shadow-2xl hover:shadow-primary-500/50 transition-all duration-300 relative overflow-hidden group/btn text-sm sm:text-base w-full sm:w-auto text-center"
                 whileHover={{ scale: 1.08, y: -5 }}
                 whileTap={{ scale: 0.95 }}
                 initial={{ opacity: 0, x: -30 }}
@@ -164,11 +164,12 @@ const Hero = () => {
                 transition={{ delay: 1, type: "spring" }}
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-primary-600 via-purple-600 to-pink-600 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
-                <span className="relative z-10 flex items-center gap-2">
+                <span className="relative z-10 flex items-center justify-center gap-2">
                   Voir mes projets
                   <motion.span
                     animate={{ x: [0, 5, 0] }}
                     transition={{ duration: 1.5, repeat: Infinity }}
+                    className="hidden sm:inline-block"
                   >
                     →
                   </motion.span>
@@ -177,7 +178,7 @@ const Hero = () => {
               <motion.a
                 href={cvFile}
                 download="safaaEttalhi_Cv.pdf"
-                className="px-8 py-4 glass rounded-full font-semibold hover:bg-primary-500/20 transition-all duration-300 border-2 border-primary-500/30 hover:border-primary-500/60 flex items-center gap-2 group/cv relative overflow-hidden"
+                className="px-6 py-3 sm:px-8 sm:py-4 glass rounded-full font-semibold hover:bg-primary-500/20 transition-all duration-300 border-2 border-primary-500/30 hover:border-primary-500/60 flex items-center justify-center gap-2 group/cv relative overflow-hidden text-sm sm:text-base w-full sm:w-auto"
                 whileHover={{ scale: 1.08, y: -5 }}
                 whileTap={{ scale: 0.95 }}
                 initial={{ opacity: 0, y: 20 }}
@@ -185,12 +186,12 @@ const Hero = () => {
                 transition={{ delay: 1.1, type: "spring" }}
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-primary-500/20 to-purple-600/20 opacity-0 group-hover/cv:opacity-100 transition-opacity duration-300"></div>
-                <FaDownload className="text-lg relative z-10 group-hover/cv:animate-bounce" />
+                <FaDownload className="text-base sm:text-lg relative z-10 group-hover/cv:animate-bounce" />
                 <span className="relative z-10">Télécharger CV</span>
               </motion.a>
               <motion.a
                 href="#contact"
-                className="px-8 py-4 glass rounded-full font-semibold hover:bg-primary-500/20 transition-all duration-300 border-2 border-primary-500/30 hover:border-primary-500/60 group/contact relative overflow-hidden"
+                className="px-6 py-3 sm:px-8 sm:py-4 glass rounded-full font-semibold hover:bg-primary-500/20 transition-all duration-300 border-2 border-primary-500/30 hover:border-primary-500/60 group/contact relative overflow-hidden text-sm sm:text-base w-full sm:w-auto text-center"
                 whileHover={{ scale: 1.08, y: -5 }}
                 whileTap={{ scale: 0.95 }}
                 initial={{ opacity: 0, x: 30 }}
@@ -276,12 +277,16 @@ const Hero = () => {
         </div>
 
         <motion.div
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
+          className="absolute bottom-4 sm:bottom-10 left-1/2 transform -translate-x-1/2 z-20"
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
-          <a href="#about" className="text-gray-400 hover:text-white transition-colors">
-            <HiArrowDown className="text-3xl" />
+          <a 
+            href="#about" 
+            className="text-gray-400 hover:text-white transition-colors flex items-center justify-center p-2 rounded-full hover:bg-primary-500/20 transition-all duration-300"
+            aria-label="Aller à la section À propos"
+          >
+            <HiArrowDown className="text-2xl sm:text-3xl md:text-4xl" />
           </a>
         </motion.div>
       </div>

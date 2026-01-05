@@ -646,3 +646,42 @@ h1, h2, h3 {
   color: #ffffff;
 }
 
+/* Media queries pour les boutons Hero */
+@media (max-width: 640px) {
+  .btn-primary,
+  .glass {
+    font-size: 0.875rem;
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+  .btn-primary,
+  .glass {
+    font-size: 0.9375rem;
+    padding: 0.875rem 1.75rem;
+  }
+}
+
+/* Media query pour la flèche de navigation */
+@media (max-width: 640px) {
+  #home .absolute.bottom-4 {
+    bottom: 1rem;
+  }
+}
+
+@media (min-width: 641px) {
+  #home .absolute.bottom-10 {
+    bottom: 2.5rem;
+  }
+}
+
+/* Amélioration de la responsivité des boutons sur très petits écrans */
+@media (max-width: 480px) {
+  .btn-primary,
+  .glass {
+    font-size: 0.8125rem;
+    padding: 0.625rem 1.25rem;
+  }
+}
+
