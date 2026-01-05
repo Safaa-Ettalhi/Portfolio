@@ -90,16 +90,16 @@ const Projects = () => {
           </motion.p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              className="glass-strong rounded-3xl overflow-hidden hover:bg-primary-500/10 transition-all duration-500 group relative card-hover project-card transform-3d"
+              className="glass-strong rounded-2xl sm:rounded-3xl overflow-hidden hover:bg-primary-500/10 transition-all duration-500 group relative card-hover project-card transform-3d"
               initial={{ opacity: 0, y: 60, rotateX: -15, scale: 0.9 }}
               whileInView={{ opacity: 1, y: 0, rotateX: 0, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.2, type: "spring", stiffness: 100, damping: 15 }}
-              whileHover={{ scale: 1.08, y: -20, rotateY: 5, rotateX: -2 }}
+              whileHover={{ scale: 1.05, y: -10, rotateY: 2 }}
               style={{ transformStyle: "preserve-3d" }}
             >
               {/* Enhanced gradient overlays */}
@@ -112,10 +112,10 @@ const Projects = () => {
                 <div className="absolute inset-[1px] rounded-3xl bg-gradient-to-r from-primary-500/20 via-purple-600/20 to-pink-500/20"></div>
               </div>
               
-              <div className="p-8 relative z-10">
+              <div className="p-5 sm:p-6 md:p-8 relative z-10">
                 <motion.div 
-                  className="mb-6 inline-block relative"
-                  whileHover={{ scale: 1.2, rotate: [0, -15, 15, 0], y: -5 }}
+                  className="mb-4 sm:mb-6 inline-block relative"
+                  whileHover={{ scale: 1.15, rotate: [0, -10, 10, 0], y: -5 }}
                   transition={{ duration: 0.6, type: "spring" }}
                 >
                   {project.logo && (
@@ -124,12 +124,12 @@ const Projects = () => {
                       <div className="absolute inset-0 bg-gradient-to-r from-primary-500/40 to-purple-600/40 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                       <div className="absolute inset-0 bg-gradient-to-r from-purple-500/30 to-pink-500/30 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-75"></div>
                       
-                      <div className="relative glass-strong p-6 rounded-2xl group-hover:bg-primary-500/25 transition-all duration-500 border-2 border-primary-500/30 group-hover:border-primary-500/70 shadow-xl shadow-primary-500/20">
-                        <div className="absolute inset-0 bg-gradient-to-br from-primary-500/20 to-purple-600/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      <div className="relative glass-strong p-4 sm:p-5 md:p-6 rounded-xl sm:rounded-2xl group-hover:bg-primary-500/25 transition-all duration-500 border-2 border-primary-500/30 group-hover:border-primary-500/70 shadow-xl shadow-primary-500/20">
+                        <div className="absolute inset-0 bg-gradient-to-br from-primary-500/20 to-purple-600/20 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         <motion.img 
                           src={project.logo} 
                           alt={project.title}
-                          className="w-32 h-32 object-contain filter drop-shadow-2xl group-hover:brightness-130 group-hover:scale-115 transition-all duration-500 relative z-10"
+                          className="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 object-contain filter drop-shadow-2xl group-hover:brightness-130 group-hover:scale-110 transition-all duration-500 relative z-10"
                           style={{ backgroundColor: 'transparent' }}
                           whileHover={{ rotate: [0, -5, 5, 0] }}
                           transition={{ duration: 0.5 }}
@@ -143,14 +143,14 @@ const Projects = () => {
                 </motion.div>
                 
                 <motion.h3 
-                  className="text-3xl font-bold mb-3 group-hover:text-primary-400 transition-all duration-300"
+                  className="text-2xl sm:text-3xl font-bold mb-2 sm:mb-3 group-hover:text-primary-400 transition-all duration-300"
                   whileHover={{ x: 5 }}
                 >
                   {project.title}
                 </motion.h3>
                 
                 <motion.p 
-                  className="text-primary-400 font-semibold mb-4 text-lg"
+                  className="text-primary-400 font-semibold mb-3 sm:mb-4 text-base sm:text-lg"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
@@ -160,7 +160,7 @@ const Projects = () => {
                 </motion.p>
                 
                 <motion.p 
-                  className="text-gray-300 mb-6 leading-relaxed text-base"
+                  className="text-gray-300 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
@@ -169,12 +169,12 @@ const Projects = () => {
                   {project.description}
                 </motion.p>
                 
-                <div className="flex flex-wrap gap-2 mb-6">
+                <div className="flex flex-wrap gap-2 mb-4 sm:mb-6">
                   {project.technologies.map((tech, techIndex) => (
                     <motion.span
                       key={techIndex}
-                      className="px-4 py-2 bg-primary-500/20 rounded-full text-xs text-gray-300 font-medium border border-primary-500/40 hover:border-primary-500/70 transition-all duration-300 relative overflow-hidden group/tech"
-                      whileHover={{ scale: 1.15, y: -3, backgroundColor: 'rgba(14, 165, 233, 0.35)' }}
+                      className="px-3 py-1.5 sm:px-4 sm:py-2 bg-primary-500/20 rounded-full text-xs text-gray-300 font-medium border border-primary-500/40 hover:border-primary-500/70 transition-all duration-300 relative overflow-hidden group/tech"
+                      whileHover={{ scale: 1.1, y: -3, backgroundColor: 'rgba(14, 165, 233, 0.35)' }}
                       initial={{ opacity: 0, scale: 0.8 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}
@@ -186,17 +186,17 @@ const Projects = () => {
                   ))}
                 </div>
 
-                <div className="flex gap-4">
+                <div className="flex gap-3 sm:gap-4">
                   <motion.a
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-6 py-3 glass rounded-xl hover:bg-primary-500/40 transition-all duration-300 font-semibold group/btn relative overflow-hidden"
-                    whileHover={{ scale: 1.1, x: 5, y: -3 }}
+                    className="flex items-center justify-center gap-2 px-4 py-2.5 sm:px-6 sm:py-3 glass rounded-xl hover:bg-primary-500/40 transition-all duration-300 font-semibold group/btn relative overflow-hidden text-sm sm:text-base w-full sm:w-auto"
+                    whileHover={{ scale: 1.05, x: 5, y: -3 }}
                     whileTap={{ scale: 0.95 }}
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-primary-500/30 to-purple-600/30 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
-                    <FaGithub className="group-hover/btn:rotate-12 transition-transform relative z-10 text-lg" />
+                    <FaGithub className="group-hover/btn:rotate-12 transition-transform relative z-10 text-base sm:text-lg" />
                     <span className="relative z-10">Voir le code</span>
                   </motion.a>
                 </div>

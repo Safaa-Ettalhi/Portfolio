@@ -63,7 +63,7 @@ const Experience = () => {
           transition={{ duration: 0.8 }}
         >
           <motion.h2 
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 section-header"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 section-header"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -72,7 +72,7 @@ const Experience = () => {
             <span className="gradient-text text-glow">Expérience Professionnelle</span>
           </motion.h2>
           <motion.p
-            className="text-gray-400 text-lg"
+            className="text-gray-400 text-base sm:text-lg"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -82,11 +82,11 @@ const Experience = () => {
           </motion.p>
         </motion.div>
 
-        <div className="max-w-5xl mx-auto space-y-8">
+        <div className="max-w-5xl mx-auto space-y-6 sm:space-y-8">
           {experiences.map((exp, index) => (
             <motion.div
               key={index}
-              className="glass-strong p-8 rounded-3xl hover:bg-primary-500/10 transition-all duration-500 relative overflow-hidden group card-hover"
+              className="glass-strong p-5 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl hover:bg-primary-500/10 transition-all duration-500 relative overflow-hidden group card-hover"
               initial={{ opacity: 0, y: 60, rotateX: -15 }}
               whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
               viewport={{ once: true }}
@@ -102,27 +102,27 @@ const Experience = () => {
               </div>
 
               <div className="relative z-10">
-                <div className="flex items-start gap-6 mb-6">
+                <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6 mb-4 sm:mb-6">
                   <motion.div 
-                    className="p-5 bg-gradient-to-br from-primary-500/30 to-purple-600/30 rounded-2xl relative overflow-hidden group/icon"
+                    className="p-3 sm:p-4 md:p-5 bg-gradient-to-br from-primary-500/30 to-purple-600/30 rounded-xl sm:rounded-2xl relative overflow-hidden group/icon flex-shrink-0"
                     whileHover={{ scale: 1.1, rotate: [0, -5, 5, 0] }}
                     transition={{ duration: 0.5 }}
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-primary-500/50 to-purple-600/50 opacity-0 group-hover/icon:opacity-100 transition-opacity duration-300"></div>
-                    <FaBriefcase className="text-4xl text-primary-400 relative z-10 drop-shadow-lg" />
+                    <FaBriefcase className="text-2xl sm:text-3xl md:text-4xl text-primary-400 relative z-10 drop-shadow-lg" />
                     <div className="absolute inset-0 bg-primary-500/20 blur-xl opacity-0 group-hover/icon:opacity-100 transition-opacity duration-300"></div>
                   </motion.div>
                   
-                  <div className="flex-1">
-                    <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3 gap-3">
+                  <div className="flex-1 w-full">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2 sm:mb-3 gap-2 sm:gap-3">
                       <motion.h3 
-                        className="text-3xl font-bold bg-gradient-to-r from-white via-primary-200 to-white bg-clip-text text-transparent group-hover:from-primary-400 group-hover:via-white group-hover:to-primary-400 transition-all duration-500"
+                        className="text-xl sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-white via-primary-200 to-white bg-clip-text text-transparent group-hover:from-primary-400 group-hover:via-white group-hover:to-primary-400 transition-all duration-500"
                         whileHover={{ x: 5 }}
                       >
                         {exp.company}
                       </motion.h3>
                       <motion.span 
-                        className="px-4 py-2 bg-gradient-to-r from-primary-500/30 to-purple-600/30 text-primary-300 rounded-full text-sm font-semibold border border-primary-500/50 shadow-lg shadow-primary-500/20"
+                        className="px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-primary-500/30 to-purple-600/30 text-primary-300 rounded-full text-xs sm:text-sm font-semibold border border-primary-500/50 shadow-lg shadow-primary-500/20 self-start sm:self-auto"
                         whileHover={{ scale: 1.1 }}
                         initial={{ opacity: 0, scale: 0.8 }}
                         whileInView={{ opacity: 1, scale: 1 }}
@@ -134,7 +134,7 @@ const Experience = () => {
                     </div>
                     
                     <motion.p 
-                      className="text-xl text-primary-400 mb-4 font-semibold"
+                      className="text-lg sm:text-xl text-primary-400 mb-3 sm:mb-4 font-semibold"
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
@@ -144,18 +144,18 @@ const Experience = () => {
                     </motion.p>
                     
                     <motion.div 
-                      className="flex items-center gap-3 text-gray-400 mb-5"
+                      className="flex items-center gap-2 sm:gap-3 text-gray-400 mb-4 sm:mb-5"
                       initial={{ opacity: 0 }}
                       whileInView={{ opacity: 1 }}
                       viewport={{ once: true }}
                       transition={{ delay: index * 0.2 + 0.2 }}
                     >
-                      <FaCalendarAlt className="text-primary-400" />
-                      <span className="text-gray-300 font-medium">{exp.period}</span>
+                      <FaCalendarAlt className="text-primary-400 text-sm sm:text-base" />
+                      <span className="text-gray-300 font-medium text-sm sm:text-base">{exp.period}</span>
                     </motion.div>
                     
                     <motion.p 
-                      className="text-gray-300 mb-6 leading-relaxed text-lg"
+                      className="text-gray-300 mb-4 sm:mb-6 leading-relaxed text-base sm:text-lg"
                       initial={{ opacity: 0 }}
                       whileInView={{ opacity: 1 }}
                       viewport={{ once: true }}
@@ -164,11 +164,11 @@ const Experience = () => {
                       {exp.project}
                     </motion.p>
                     
-                    <div className="flex flex-wrap gap-3">
+                    <div className="flex flex-wrap gap-2 sm:gap-3">
                       {exp.technologies.map((tech, techIndex) => (
                         <motion.span
                           key={techIndex}
-                          className="px-4 py-2 glass rounded-full text-sm text-gray-300 hover:text-white transition-all duration-300 border border-primary-500/30 hover:border-primary-500/60 relative overflow-hidden group/tech"
+                          className="px-3 sm:px-4 py-1.5 sm:py-2 glass rounded-full text-xs sm:text-sm text-gray-300 hover:text-white transition-all duration-300 border border-primary-500/30 hover:border-primary-500/60 relative overflow-hidden group/tech"
                           initial={{ opacity: 0, scale: 0.8 }}
                           whileInView={{ opacity: 1, scale: 1 }}
                           viewport={{ once: true }}
@@ -176,8 +176,8 @@ const Experience = () => {
                           whileHover={{ scale: 1.1, y: -3 }}
                         >
                           <div className="absolute inset-0 bg-gradient-to-r from-primary-500/20 to-purple-600/20 opacity-0 group-hover/tech:opacity-100 transition-opacity duration-300"></div>
-                          <span className="relative z-10 font-medium flex items-center gap-2">
-                            <FaCode className="text-xs opacity-50" />
+                          <span className="relative z-10 font-medium flex items-center gap-1 sm:gap-2">
+                            <FaCode className="text-[10px] sm:text-xs opacity-50" />
                             {tech}
                           </span>
                         </motion.span>

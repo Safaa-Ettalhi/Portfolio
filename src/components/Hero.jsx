@@ -93,7 +93,7 @@ const Hero = () => {
               Bonjour, je suis
             </motion.p>
             <motion.h1
-              className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4 leading-tight"
+              className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-3 sm:mb-4 leading-tight"
               initial={{ opacity: 0, y: 30, scale: 0.9 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ delay: 0.3, type: "spring", stiffness: 100, damping: 15 }}
@@ -103,7 +103,7 @@ const Hero = () => {
               </span>
             </motion.h1>
             <motion.h2
-              className="text-3xl md:text-5xl font-semibold mb-6 text-gray-300"
+              className="text-2xl sm:text-3xl md:text-5xl font-semibold mb-4 sm:mb-6 text-gray-300"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, type: "spring" }}
@@ -113,7 +113,7 @@ const Hero = () => {
               </span>
             </motion.h2>
             <motion.p
-              className="text-lg md:text-xl text-gray-400 mb-8 max-w-2xl leading-relaxed"
+              className="text-base sm:text-lg md:text-xl text-gray-400 mb-6 sm:mb-8 max-w-2xl leading-relaxed px-2 sm:px-0"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
@@ -123,7 +123,7 @@ const Hero = () => {
             </motion.p>
 
             <motion.div
-              className="flex items-center justify-center md:justify-start gap-6 mb-8"
+              className="flex items-center justify-center md:justify-start gap-4 sm:gap-6 mb-6 sm:mb-8"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.7 }}
@@ -134,7 +134,7 @@ const Hero = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="glass p-4 rounded-full hover:bg-primary-500/30 transition-all duration-300 glow relative group/social overflow-hidden"
+                  className="glass p-3 sm:p-4 rounded-full hover:bg-primary-500/30 transition-all duration-300 glow relative group/social overflow-hidden"
                   whileHover={{ scale: 1.15, rotate: [0, -10, 10, 0], y: -5 }}
                   whileTap={{ scale: 0.9 }}
                   initial={{ opacity: 0, y: 20, scale: 0.8 }}
@@ -142,7 +142,7 @@ const Hero = () => {
                   transition={{ delay: 0.8 + index * 0.1, type: "spring", stiffness: 200 }}
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-primary-500/50 to-purple-600/50 opacity-0 group-hover/social:opacity-100 transition-opacity duration-300 rounded-full"></div>
-                  <social.icon className="text-xl relative z-10 text-primary-300 group-hover/social:text-white transition-colors" />
+                  <social.icon className="text-lg sm:text-xl relative z-10 text-primary-300 group-hover/social:text-white transition-colors" />
                   <div className="absolute inset-0 bg-primary-500/20 blur-xl opacity-0 group-hover/social:opacity-100 transition-opacity duration-300 rounded-full"></div>
                 </motion.a>
               ))}
@@ -205,12 +205,12 @@ const Hero = () => {
           </motion.div>
 
           <motion.div
-            className="flex-1 flex justify-center"
+            className="flex-1 flex justify-center mt-8 md:mt-0"
             initial={{ opacity: 0, x: 50, scale: 0.9 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
             transition={{ duration: 1, delay: 0.4, type: "spring", stiffness: 100 }}
           >
-            <div className="relative w-80 h-80 md:w-96 md:h-96 group/profile">
+            <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 group/profile">
               {/* Enhanced animated glow */}
               <motion.div
                 className="absolute inset-0 bg-gradient-to-r from-primary-500 via-purple-600 to-pink-500 rounded-full blur-3xl opacity-50"
@@ -255,20 +255,21 @@ const Hero = () => {
                 
                 {/* Enhanced badge */}
                 <motion.div
-                  className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 glass-strong px-8 py-3 rounded-full border-2 border-primary-500/50 shadow-xl shadow-primary-500/30"
+                  className="absolute -bottom-4 sm:-bottom-6 left-1/2 transform -translate-x-1/2 glass-strong px-4 sm:px-6 md:px-8 py-2 sm:py-3 rounded-full border-2 border-primary-500/50 shadow-xl shadow-primary-500/30"
                   animate={{ y: [0, -12, 0] }}
                   transition={{ duration: 3, repeat: Infinity }}
                   whileHover={{ scale: 1.1, y: -15 }}
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-primary-500/20 to-purple-600/20 rounded-full opacity-0 group-hover/profile:opacity-100 transition-opacity duration-300"></div>
-                  <span className="text-sm font-bold text-primary-300 relative z-10 flex items-center gap-2">
+                  <span className="text-xs sm:text-sm font-bold text-primary-300 relative z-10 flex items-center gap-1 sm:gap-2">
                     <motion.span
                       animate={{ rotate: [0, 360], scale: [1, 1.2, 1] }}
                       transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                     >
-                      <FaBolt className="text-primary-400 text-base" />
+                      <FaBolt className="text-primary-400 text-sm sm:text-base" />
                     </motion.span>
-                    Full-Stack Developer
+                    <span className="hidden sm:inline">Full-Stack Developer</span>
+                    <span className="sm:hidden">Full-Stack</span>
                   </span>
                 </motion.div>
               </div>

@@ -98,18 +98,18 @@ const Skills = () => {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={category.title}
-              className="glass p-6 rounded-2xl card-hover"
+              className="glass p-4 sm:p-6 rounded-2xl card-hover"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: categoryIndex * 0.1 }}
             >
-              <h3 className="text-2xl font-semibold mb-6 text-primary-400">{category.title}</h3>
-              <div className="grid grid-cols-4 gap-4">
+              <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-primary-400">{category.title}</h3>
+              <div className="grid grid-cols-3 sm:grid-cols-4 gap-3 sm:gap-4">
                 {category.skills.map((skill, skillIndex) => (
                   <motion.div
                     key={skill.name}
@@ -121,28 +121,28 @@ const Skills = () => {
                     whileHover={{ scale: 1.15, y: -8 }}
                   >
                     <motion.div 
-                      className="glass p-3 rounded-xl mb-2 group-hover:bg-primary-500/30 group-hover:border-primary-500/50 transition-all duration-300 relative overflow-hidden"
+                      className="glass p-2 sm:p-3 rounded-xl mb-1 sm:mb-2 group-hover:bg-primary-500/30 group-hover:border-primary-500/50 transition-all duration-300 relative overflow-hidden"
                       whileHover={{ rotate: [0, -5, 5, 0] }}
                     >
                       <div className="absolute inset-0 bg-gradient-to-br from-primary-500/20 to-purple-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                       <img
                         src={skill.icon}
                         alt={skill.name}
-                        className="w-8 h-8 object-contain relative z-10 filter group-hover:brightness-110 transition-all duration-300 drop-shadow-lg"
+                        className="w-6 h-6 sm:w-8 sm:h-8 object-contain relative z-10 filter group-hover:brightness-110 transition-all duration-300 drop-shadow-lg"
                         loading="lazy"
                         onError={(e) => {
                           e.target.style.display = 'none'
                           const parent = e.target.parentElement
                           if (parent && !parent.querySelector('.fallback-icon')) {
                             const fallback = document.createElement('div')
-                            fallback.className = 'fallback-icon text-primary-400 font-bold text-lg w-8 h-8 flex items-center justify-center'
+                            fallback.className = 'fallback-icon text-primary-400 font-bold text-sm sm:text-lg w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center'
                             fallback.textContent = skill.name.charAt(0)
                             parent.appendChild(fallback)
                           }
                         }}
                       />
                     </motion.div>
-                    <span className="text-xs text-gray-400 text-center group-hover:text-primary-400 transition-colors font-medium">
+                    <span className="text-[10px] sm:text-xs text-gray-400 text-center group-hover:text-primary-400 transition-colors font-medium leading-tight">
                       {skill.name}
                     </span>
                   </motion.div>

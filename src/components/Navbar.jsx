@@ -36,14 +36,14 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <motion.a
             href="#home"
-            className="text-3xl font-bold gradient-text relative group"
+            className="text-2xl sm:text-3xl font-bold gradient-text relative group"
             whileHover={{ scale: 1.1 }}
           >
             <span className="relative z-10">SE</span>
             <span className="absolute inset-0 bg-primary-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
           </motion.a>
 
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
             {navItems.map((item, index) => (
               <motion.a
                 key={item.name}
@@ -62,8 +62,9 @@ const Navbar = () => {
           </div>
 
           <button
-            className="md:hidden text-white text-2xl"
+            className="md:hidden text-white text-xl sm:text-2xl p-2 rounded-lg hover:bg-primary-500/20 transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
           </button>
@@ -73,17 +74,21 @@ const Navbar = () => {
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="md:hidden mt-4 space-y-4 glass p-4 rounded-lg"
+            exit={{ opacity: 0, y: -20 }}
+            className="md:hidden mt-4 space-y-2 glass-strong p-4 rounded-xl"
           >
-            {navItems.map((item) => (
-              <a
+            {navItems.map((item, index) => (
+              <motion.a
                 key={item.name}
                 href={item.href}
-                className="block text-gray-300 hover:text-white transition-colors py-2"
+                className="block text-gray-300 hover:text-white transition-colors py-3 px-4 rounded-lg hover:bg-primary-500/20 text-base font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: index * 0.05 }}
               >
                 {item.name}
-              </a>
+              </motion.a>
             ))}
           </motion.div>
         )}
