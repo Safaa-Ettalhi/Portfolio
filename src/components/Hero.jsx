@@ -1,8 +1,9 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaDownload } from 'react-icons/fa'
 import { HiArrowDown } from 'react-icons/hi'
 import profileImage from '../pic/safaa.jpg'
+import cvFile from '../cv/safaaEttalhi_Cv.pdf'
 
 const Hero = () => {
   const socialLinks = [
@@ -128,6 +129,16 @@ const Hero = () => {
                 whileTap={{ scale: 0.95 }}
               >
                 <span className="relative z-10">Voir mes projets</span>
+              </motion.a>
+              <motion.a
+                href={cvFile}
+                download="safaaEttalhi_Cv.pdf"
+                className="px-8 py-4 glass rounded-full font-semibold hover:bg-primary-500/20 transition-all duration-300 border-2 border-primary-500/30 hover:border-primary-500/60 flex items-center gap-2"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <FaDownload className="text-lg" />
+                Télécharger CV
               </motion.a>
               <motion.a
                 href="#contact"
