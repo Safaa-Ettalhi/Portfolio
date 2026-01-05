@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaDownload, FaSparkles, FaBolt, FaArrowRight } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaDownload, FaBolt, FaArrowRight } from 'react-icons/fa'
 import { HiArrowDown } from 'react-icons/hi'
 import { BsStars } from 'react-icons/bs'
 import profileImage from '../pic/safaa.jpg'
