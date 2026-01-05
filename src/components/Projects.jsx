@@ -31,50 +31,108 @@ const Projects = () => {
   ]
 
   return (
-    <section id="projects" className="py-20 relative">
-      <div className="container mx-auto px-6">
+    <section id="projects" className="py-20 relative overflow-hidden">
+      {/* Enhanced background elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <motion.div
+          className="absolute top-0 left-1/4 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl"
+          animate={{
+            x: [0, 50, 0],
+            y: [0, 100, 0],
+            scale: [1, 1.3, 1],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+        <motion.div
+          className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"
+          animate={{
+            x: [0, -50, 0],
+            y: [0, -100, 0],
+            scale: [1, 1.2, 1],
+          }}
+          transition={{
+            duration: 25,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
         <motion.div
           className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 section-header">
+          <motion.h2 
+            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 section-header"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
             <span className="gradient-text text-glow">Projets Réalisés</span>
-          </h2>
-          <p className="text-gray-400 text-lg mb-6">+25 projets réalisés</p>
+          </motion.h2>
+          <motion.p 
+            className="text-gray-400 text-lg md:text-xl mb-6"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+          >
+            <span className="text-primary-400 font-semibold">+25 projets</span> réalisés avec passion et excellence
+          </motion.p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              className="glass-strong rounded-3xl overflow-hidden hover:bg-primary-500/10 transition-all duration-300 group relative card-hover project-card transform-3d"
-              initial={{ opacity: 0, y: 50, rotateX: -10 }}
-              whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+              className="glass-strong rounded-3xl overflow-hidden hover:bg-primary-500/10 transition-all duration-500 group relative card-hover project-card transform-3d"
+              initial={{ opacity: 0, y: 60, rotateX: -15, scale: 0.9 }}
+              whileInView={{ opacity: 1, y: 0, rotateX: 0, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.2, type: "spring", stiffness: 100 }}
-              whileHover={{ scale: 1.05, y: -15, rotateY: 2 }}
+              transition={{ delay: index * 0.2, type: "spring", stiffness: 100, damping: 15 }}
+              whileHover={{ scale: 1.08, y: -20, rotateY: 5, rotateX: -2 }}
+              style={{ transformStyle: "preserve-3d" }}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-primary-500/5 via-transparent to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              {/* Enhanced gradient overlays */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-500/10 via-transparent to-purple-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              {/* Animated border glow */}
+              <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-primary-500/30 via-purple-600/30 to-pink-500/30 blur-2xl"></div>
+                <div className="absolute inset-[1px] rounded-3xl bg-gradient-to-r from-primary-500/20 via-purple-600/20 to-pink-500/20"></div>
+              </div>
               
               <div className="p-8 relative z-10">
                 <motion.div 
                   className="mb-6 inline-block relative"
-                  whileHover={{ scale: 1.15, rotate: [0, -10, 10, 0] }}
-                  transition={{ duration: 0.5 }}
+                  whileHover={{ scale: 1.2, rotate: [0, -15, 15, 0], y: -5 }}
+                  transition={{ duration: 0.6, type: "spring" }}
                 >
                   {project.logo && (
                     <div className="relative">
-                      <div className="absolute inset-0 bg-gradient-to-r from-primary-500/30 to-purple-600/30 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                      <div className="relative glass-strong p-5 rounded-2xl group-hover:bg-primary-500/20 transition-all duration-300 border-2 border-primary-500/20 group-hover:border-primary-500/50">
-                        <div className="absolute inset-0 bg-gradient-to-br from-primary-500/10 to-purple-600/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        <img 
+                      {/* Multiple glow layers */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-primary-500/40 to-purple-600/40 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      <div className="absolute inset-0 bg-gradient-to-r from-purple-500/30 to-pink-500/30 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-75"></div>
+                      
+                      <div className="relative glass-strong p-6 rounded-2xl group-hover:bg-primary-500/25 transition-all duration-500 border-2 border-primary-500/30 group-hover:border-primary-500/70 shadow-xl shadow-primary-500/20">
+                        <div className="absolute inset-0 bg-gradient-to-br from-primary-500/20 to-purple-600/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <motion.img 
                           src={project.logo} 
                           alt={project.title}
-                          className="w-28 h-28 object-contain filter drop-shadow-2xl group-hover:brightness-120 group-hover:scale-110 transition-all duration-300 relative z-10"
+                          className="w-32 h-32 object-contain filter drop-shadow-2xl group-hover:brightness-130 group-hover:scale-115 transition-all duration-500 relative z-10"
                           style={{ backgroundColor: 'transparent' }}
+                          whileHover={{ rotate: [0, -5, 5, 0] }}
+                          transition={{ duration: 0.5 }}
                           onError={(e) => {
                             e.target.style.display = 'none'
                           }}
@@ -83,22 +141,47 @@ const Projects = () => {
                     </div>
                   )}
                 </motion.div>
-                <h3 className="text-3xl font-bold mb-3 group-hover:text-primary-400 transition-colors">{project.title}</h3>
-                <p className="text-primary-400 font-medium mb-4 text-lg">{project.subtitle}</p>
-                <p className="text-gray-300 mb-6 leading-relaxed text-base">{project.description}</p>
+                
+                <motion.h3 
+                  className="text-3xl font-bold mb-3 group-hover:text-primary-400 transition-all duration-300"
+                  whileHover={{ x: 5 }}
+                >
+                  {project.title}
+                </motion.h3>
+                
+                <motion.p 
+                  className="text-primary-400 font-semibold mb-4 text-lg"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.2 + 0.1 }}
+                >
+                  {project.subtitle}
+                </motion.p>
+                
+                <motion.p 
+                  className="text-gray-300 mb-6 leading-relaxed text-base"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.2 + 0.2 }}
+                >
+                  {project.description}
+                </motion.p>
                 
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.technologies.map((tech, techIndex) => (
                     <motion.span
                       key={techIndex}
-                      className="px-4 py-1.5 bg-primary-500/20 rounded-full text-xs text-gray-300 font-medium border border-primary-500/30"
-                      whileHover={{ scale: 1.1, backgroundColor: 'rgba(14, 165, 233, 0.3)' }}
+                      className="px-4 py-2 bg-primary-500/20 rounded-full text-xs text-gray-300 font-medium border border-primary-500/40 hover:border-primary-500/70 transition-all duration-300 relative overflow-hidden group/tech"
+                      whileHover={{ scale: 1.15, y: -3, backgroundColor: 'rgba(14, 165, 233, 0.35)' }}
                       initial={{ opacity: 0, scale: 0.8 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}
-                      transition={{ delay: (index * 0.2) + (techIndex * 0.05) }}
+                      transition={{ delay: (index * 0.2) + (techIndex * 0.05) + 0.3, type: "spring" }}
                     >
-                      {tech}
+                      <div className="absolute inset-0 bg-gradient-to-r from-primary-500/30 to-purple-600/30 opacity-0 group-hover/tech:opacity-100 transition-opacity duration-300"></div>
+                      <span className="relative z-10">{tech}</span>
                     </motion.span>
                   ))}
                 </div>
@@ -108,12 +191,13 @@ const Projects = () => {
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-6 py-3 glass rounded-xl hover:bg-primary-500/30 transition-all duration-300 font-medium group/btn"
-                    whileHover={{ scale: 1.05, x: 5 }}
+                    className="flex items-center gap-2 px-6 py-3 glass rounded-xl hover:bg-primary-500/40 transition-all duration-300 font-semibold group/btn relative overflow-hidden"
+                    whileHover={{ scale: 1.1, x: 5, y: -3 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <FaGithub className="group-hover/btn:rotate-12 transition-transform" />
-                    <span>Code</span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary-500/30 to-purple-600/30 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
+                    <FaGithub className="group-hover/btn:rotate-12 transition-transform relative z-10 text-lg" />
+                    <span className="relative z-10">Voir le code</span>
                   </motion.a>
                 </div>
               </div>
